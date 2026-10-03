@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lock inn — legal</title>
+  <style>
+    :root {
+      --ink: #12141a;
+      --muted: #5c6370;
+      --paper: #f4f5f7;
+      --card: #fff;
+      --line: #e3e5ea;
+      --accent: #c9892c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+    h1 { font-size: 2rem; letter-spacing: -0.03em; margin: 0 0 0.5rem; }
+    .muted { color: var(--muted); }
+    .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.25rem 1.35rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card strong { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
+    .card span { color: var(--muted); font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>lock inn</h1>
+    <p class="muted">Legal pages for the Android app (package <code>com.lockinn</code>).</p>
+    <a class="card" href="privacy-policy.html">
+      <strong>Privacy Policy</strong>
+      <span>What stays on your phone, Google Calendar, Play purchases, and your choices.</span>
+    </a>
+    <a class="card" href="terms.html">
+      <strong>Terms of Service</strong>
+      <span>How you’re allowed to use lock inn, Pro, and beta builds.</span>
+    </a>
+    <p class="muted" style="margin-top:2rem;font-size:0.9rem;">
+      Contact: <a href="mailto:h17devs@gmail.com" style="color:var(--accent)">h17devs@gmail.com</a>
+    </p>
+  </main>
+</body>
+</html>
