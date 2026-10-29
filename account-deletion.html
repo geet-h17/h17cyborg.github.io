@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lock inn — Delete account and data</title>
+  <style>
+    :root {
+      --ink: #12141a;
+      --muted: #5c6370;
+      --paper: #f4f5f7;
+      --line: #e3e5ea;
+      --accent: #c9892c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    h1 { font-size: 1.85rem; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 0.6rem; }
+    ol, ul { padding-left: 1.2rem; }
+    p, li { font-size: 0.95rem; }
+    a { color: var(--accent); }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+    .steps {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+    }
+    nav {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin: 1.25rem 0 2rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>lock inn — Delete your account and data</h1>
+    <p class="muted">Developer: lock inn (package com.lockinn) · Contact: <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="account-deletion.html">Delete account</a>
+    </nav>
+
+    <p>
+      lock inn does not host a cloud account of its own. Optional Google Sign-In is only
+      used to sync calendar. Agenda data lives on your Android device. Follow the steps
+      below to delete the in-app Google session and all associated local data.
+    </p>
+
+    <h2>How to delete your lock inn account</h2>
+    <div class="steps">
+      <ol>
+        <li>Open the <strong>lock inn</strong> app on your Android phone.</li>
+        <li>Tap the gear icon (Settings) in the top-right.</li>
+        <li>If you signed in with Google: tap <strong>Sign out</strong> under Account. This ends the Google session in lock inn and removes synced Google Calendar events from the app.</li>
+        <li>Uninstall lock inn, or go to Android Settings → Apps → lock inn → Storage → <strong>Clear data</strong>, then uninstall.</li>
+        <li>If you already uninstalled the app, email <a href="mailto:h17devs@gmail.com?subject=lock%20inn%20account%20deletion">h17devs@gmail.com</a> with the subject “lock inn account deletion” and the Google email you used (if any). We will confirm when the request is complete.</li>
+      </ol>
+    </div>
+
+    <h2>What is deleted</h2>
+    <ul>
+      <li>Tasks, reminders, lists, notes, and lock-screen settings stored in the app</li>
+      <li>Copied lock-wallpaper photos stored in the app’s private storage</li>
+      <li>Google Sign-In tokens stored on the device</li>
+      <li>Google Calendar events that were synced <em>into lock inn</em> (they are removed from the app on sign-out / clear data)</li>
+    </ul>
+
+    <h2>What is kept</h2>
+    <ul>
+      <li>Your Google account itself — we cannot delete that. Manage it at Google Account settings.</li>
+      <li>Events that live in Google Calendar or another calendar app on the phone — those stay unless you delete them there.</li>
+      <li>Google Play purchase records for lock inn Pro — retained by Google Play under Play’s policies. Uninstalling does not refund or erase the Play entitlement; you can restore Pro later on the same Play account.</li>
+      <li>An email you send us to request deletion — kept only until we finish the request (see retention below), then deleted.</li>
+    </ul>
+
+    <h2>Retention</h2>
+    <p>
+      We do not operate a server that stores your agenda. Once you sign out and clear data or
+      uninstall, local lock inn data is gone immediately. Email deletion requests are handled
+      within <strong>30 days</strong>, then we delete that correspondence. Play and Google
+      retain their own records for as long as their policies require.
+    </p>
+
+    <h2 id="data">Delete some data without deleting your account</h2>
+    <p>
+      You can remove data and stay signed in, or disconnect Google without uninstalling lock inn.
+    </p>
+    <div class="steps">
+      <ol>
+        <li>Open <strong>lock inn</strong>.</li>
+        <li>Delete individual tasks, reminders, or lists in the app.</li>
+        <li>To disconnect Google Calendar only: Settings → Account → <strong>Sign out</strong>. Local tasks and reminders stay on the device; synced Google events are removed from lock inn.</li>
+        <li>To remove a lock-wallpaper photo: Lock Studio → change or remove the photo background.</li>
+        <li>Or email <a href="mailto:h17devs@gmail.com?subject=lock%20inn%20data%20deletion">h17devs@gmail.com</a> with the subject “lock inn data deletion” and what you want removed.</li>
+      </ol>
+    </div>
+
+    <p class="muted">App package: com.lockinn · lock inn</p>
+  </main>
+</body>
+</html>
