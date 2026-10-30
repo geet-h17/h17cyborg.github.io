@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>lock inn — how to use it</title>
-  <meta name="description" content="How to use lock inn: today, calendar, tasks, reminders, lock screen, Pro, and FAQ for closed testers." />
+  <meta name="description" content="A short guide to lock inn: the desk, lock wallpaper, Pro, and answers to common questions." />
   <style>
     :root {
       --ink: #12141a;
@@ -20,83 +20,118 @@
       font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
       background: var(--paper);
       color: var(--ink);
-      line-height: 1.65;
+      line-height: 1.55;
     }
     main {
-      max-width: 720px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
+      padding: 2.5rem 1.25rem 4.5rem;
     }
-    h1 { font-size: 1.85rem; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
-    h2 { font-size: 1.15rem; margin: 2.25rem 0 0.65rem; letter-spacing: -0.02em; }
-    h3 { font-size: 1rem; margin: 1.4rem 0 0.4rem; }
+    h1 {
+      font-size: 1.9rem;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.4rem;
+      font-weight: 720;
+    }
+    .lede {
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin: 0 0 0.35rem;
+    }
+    h2 {
+      font-size: 1.12rem;
+      margin: 2.35rem 0 0.55rem;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      font-size: 0.95rem;
+      margin: 1.15rem 0 0.3rem;
+      font-weight: 650;
+    }
     p, li { font-size: 0.95rem; }
-    ul, ol { padding-left: 1.2rem; }
+    p { margin: 0.45rem 0; }
+    ul, ol { padding-left: 1.15rem; margin: 0.4rem 0 0.6rem; }
     a { color: var(--accent); }
-    .muted { color: var(--muted); font-size: 0.9rem; }
-    nav {
+    .muted { color: var(--muted); font-size: 0.88rem; }
+    nav.site {
       display: flex; gap: 1rem; flex-wrap: wrap;
-      margin: 1.25rem 0 2rem; padding-bottom: 1rem;
+      margin: 1.1rem 0 1.35rem; padding-bottom: 1rem;
       border-bottom: 1px solid var(--line);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
-    .toc {
+    .jumps {
+      display: flex; gap: 0.45rem; flex-wrap: wrap;
+      margin: 0 0 0.25rem;
+    }
+    .jumps a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--ink);
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      margin: 1.25rem 0 2rem;
+      border-radius: 999px;
+      padding: 0.28rem 0.75rem;
+      font-size: 0.82rem;
     }
-    .toc strong { display: block; margin-bottom: 0.4rem; }
-    .toc ol { margin: 0; padding-left: 1.2rem; }
-    .toc a { text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
+    .jumps a:hover { border-color: var(--accent); }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.9rem;
-      margin: 0.75rem 0 1rem;
+      margin: 0.7rem 0 0.4rem;
       background: var(--card);
     }
     th, td {
       border: 1px solid var(--line);
-      padding: 0.5rem 0.65rem;
+      padding: 0.48rem 0.6rem;
       text-align: left;
-      vertical-align: top;
     }
     th { font-weight: 650; }
     code {
       font-size: 0.86em;
       background: #eceef2;
-      padding: 0.08em 0.35em;
+      padding: 0.06em 0.32em;
       border-radius: 4px;
     }
     details {
       border-top: 1px solid var(--line);
-      padding: 0.85rem 0;
+      padding: 0.75rem 0;
     }
     details:last-of-type { border-bottom: 1px solid var(--line); }
     summary {
       cursor: pointer;
       font-weight: 650;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
-    details p, details ul { margin: 0.55rem 0 0; }
-    .note {
+    details p, details ol { margin: 0.5rem 0 0; }
+    .split {
+      display: grid;
+      gap: 0.85rem 1.5rem;
+    }
+    @media (min-width: 560px) {
+      .split-2 { grid-template-columns: 1fr 1fr; }
+    }
+    .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      font-size: 0.92rem;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
     }
+    .card h3 { margin: 0 0 0.35rem; }
+    .card p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
   <main>
-    <h1>lock inn — how to use it</h1>
-    <p class="muted">Last updated October 30, 2026 · Version 1.7.1 · Android 8 and up</p>
-    <nav>
+    <h1>lock inn</h1>
+    <p class="lede">Your day, parked by the clock.</p>
+    <p>
+      Tasks, calendar, and reminders on the phone — then the same agenda on the lock
+      wallpaper. Home wallpaper stays put. Unlock works the way it always did.
+    </p>
+    <p class="muted">30 Oct 2026 · v1.7.1 · Android 8+</p>
+
+    <nav class="site">
       <a href="index.html">Home</a>
       <a href="user-guide.html">How to use</a>
       <a href="privacy-policy.html">Privacy</a>
@@ -104,713 +139,222 @@
       <a href="account-deletion.html">Delete account</a>
     </nav>
 
-    <p>
-      lock inn is a local-first desk for Android. Tasks, calendar, reminders — then today’s
-      agenda painted onto the lock wallpaper. Home wallpaper stays home. The system lock
-      screen sits on top of that image, so PIN, pattern, and password entry stay exactly
-      where Android put them.
-    </p>
-    <p>
-      This guide matches version 1.7.1. If a control is not named here, it is not in the
-      build you have.
-    </p>
-
-    <div class="toc">
-      <strong>On this page</strong>
-      <ol>
-        <li><a href="#idea">The idea</a></li>
-        <li><a href="#start">First two minutes</a></li>
-        <li><a href="#nav">Finding your way around</a></li>
-        <li><a href="#today">Today</a></li>
-        <li><a href="#calendar">Calendar</a></li>
-        <li><a href="#tasks">Tasks</a></li>
-        <li><a href="#reminders">Reminders</a></li>
-        <li><a href="#detail">Opening an item</a></li>
-        <li><a href="#lock">Lock screen</a></li>
-        <li><a href="#looks">Lock looks</a></li>
-        <li><a href="#settings">Settings</a></li>
-        <li><a href="#pro">lock inn pro</a></li>
-        <li><a href="#permissions">Permissions</a></li>
-        <li><a href="#privacy">What stays on the phone</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ol>
+    <div class="jumps">
+      <a href="#start">Start</a>
+      <a href="#desk">Desk</a>
+      <a href="#lock">Lock</a>
+      <a href="#pro">Pro</a>
+      <a href="#faq">FAQ</a>
     </div>
 
-    <h2 id="idea">The idea</h2>
-    <p>Your actual day, parked by the clock.</p>
-    <p>
-      lock inn writes a generated lock wallpaper through Android’s wallpaper API, lock
-      flag only. It is a still image that refreshes when your day changes. It is not a
-      live overlay, not draw-over-apps, not a floating widget, and not a home-screen widget.
-      Unlock the phone the way you always did.
-    </p>
-    <p>
-      Desk features — today, calendar, tasks, reminders — are free. Pro only buys wallpaper
-      cosmetics: extra cards, a photo background, and up to eight rows.
-    </p>
-
-    <h2 id="start">First two minutes</h2>
-    <p>
-      Open the app. The intro is short. After it, today may show <strong>put it on lock</strong>.
-      One tap on <strong>Show on lock screen</strong> writes today’s desk onto the lock wallpaper.
-      <strong>Continue</strong> if you want it now; <strong>Not now</strong> if you want to look
-      around first. Calendar sign-in and alerts wait in settings — they are optional.
-    </p>
+    <h2 id="start">Start</h2>
     <ol>
-      <li>Add a task on tasks. You should see it on today (undated open tasks count as today).</li>
-      <li>Open the right-hand pill. Confirm status is <strong>Live</strong>.</li>
-      <li>Lock the phone. The agenda should sit under the system clock. The PIN pad is still the PIN pad.</li>
+      <li>Finish the intro.</li>
+      <li>On today, tap <strong>Show on lock screen</strong> — or <strong>Not now</strong> if you want to look around first.</li>
+      <li>Add a task. It should appear on today.</li>
+      <li>Open the right pill. When it says <strong>Live</strong>, lock the phone.</li>
     </ol>
-    <p>Google Calendar is optional. Local tasks, local events, and reminders already fill the desk.</p>
+    <p>Google Calendar is optional. The desk works without it.</p>
 
-    <h2 id="nav">Finding your way around</h2>
-    <p>Two floating pills at the bottom. Not one bar.</p>
-    <ul>
-      <li>
-        <strong>Left pill</strong> — four tabs, icons only: today, calendar, tasks, reminders.
-        The active tab fills a circle in that section’s color (amber, teal, mauve, slate) and slides across.
-      </li>
-      <li>
-        <strong>Right pill</strong> — lock screen. Brand chrome, not a fifth tab. This is Lock
-        Studio, titled <strong>lock screen</strong>.
-      </li>
-      <li><strong>Gear</strong>, top right on every main screen — settings.</li>
-    </ul>
-    <p>
-      Create lives on each section: the tasks field, the calendar hour <strong>+</strong>,
-      the reminders field. There is no extra create button between the pills.
-    </p>
+    <h2>Around the app</h2>
+    <p>Two pills at the bottom. The left one holds today, calendar, tasks, and reminders. The right one is lock screen. Settings is the gear at the top right.</p>
+    <p>Add from the screen you are on: the tasks field, the calendar hour <strong>+</strong>, or <strong>Remind me…</strong></p>
 
-    <h2 id="today">Today</h2>
+    <h2 id="desk">Desk</h2>
+
+    <h3>Today</h3>
     <p>
-      Control center. The date is the hero — large, bold. Under it: <strong>Hi</strong>, or
-      <strong>Hi,</strong> plus your first name if Google Sign-In gave the app one.
+      The date is the headline, with counts for what is due. A quiet day reads
+      <strong>Nothing today</strong>. Three tiles jump to tasks, the next event, and the
+      next reminder.
     </p>
     <p>
-      Counts sit under that: events, tasks, reminders due today, in the section’s ink.
-      A quiet day says <strong>Nothing today</strong>.
-    </p>
-    <p>Three glance tiles underneath:</p>
-    <ul>
-      <li><strong>Tasks</strong> — remaining today. Tap jumps to tasks.</li>
-      <li><strong>Next event</strong> — next timed event. Tap jumps to calendar.</li>
-      <li><strong>Next reminder</strong> — next fire time. Tap jumps to reminders.</li>
-    </ul>
-    <p>Empty tiles read <strong>None</strong>.</p>
-    <p>
-      Below that, today’s cards. Neutral surfaces, a color edge bar, a bold title. Timed
-      events show one window (<code>6:00 – 8:00 PM</code>) plus a muted duration pill
-      (<code>45 min</code>, <code>2 h</code>). Not two separate clocks. Instant items
-      (a task due today, a reminder) keep the time on the title row. All-day events say
-      <strong>All day</strong>.
-    </p>
-    <p>
-      The next or current item wears a faint tint. Past timed events drop into
-      <strong>Earlier</strong>. An empty list says <strong>Nothing on the desk today.</strong>
-    </p>
-    <p>
-      Tap a task or event to open it. Tap a reminder card to jump to reminders — reminders
-      have no detail screen.
+      Events show one time window, not two clocks. Tap a task or event to open it.
+      Tap a reminder to go to reminders.
     </p>
 
-    <h2 id="calendar">Calendar</h2>
-    <p>Four views in the top bar: <strong>Day</strong>, <strong>Week</strong>, <strong>Month</strong>, <strong>Agenda</strong>.</p>
-    <ul>
-      <li><strong>Month</strong> — date grid. Color dots under days that have items. Tap a date to open it.</li>
-      <li>
-        <strong>Week</strong> — each day is a full-width band. Large date and weekday on the left;
-        today’s numeral in calendar teal. Hour marks on the right, with a circular
-        <strong>+</strong> and event chips.
-      </li>
-      <li><strong>Day</strong> — the same band language, one day at a time.</li>
-      <li><strong>Agenda</strong> — a chronological scroll of those day bands, then that day’s items.</li>
-    </ul>
+    <h3>Calendar</h3>
     <p>
-      <strong>Add event</strong> is local. Title, Date, All day, Start, End, optional Notes
-      and Location. Save writes to this phone. It does <strong>not</strong> write to Google
-      Calendar. Events you create here will not appear in the Google Calendar app.
+      Switch <strong>Day</strong>, <strong>Week</strong>, <strong>Month</strong>, or
+      <strong>Agenda</strong>. On Week and Day, tap <strong>+</strong> on an hour to add
+      an event. That event stays on this phone. It is never written to Google.
     </p>
-    <p>Empty range: <strong>Nothing here.</strong></p>
-
-    <h3>Google Calendar (read-only)</h3>
     <p>
-      Settings → <strong>account</strong>. Row title <strong>Google Calendar</strong>.
-      Body: <strong>Brings in events from Google.</strong>
+      Google Calendar lives in Settings → <strong>account</strong>. Sign-in is read-only
+      and only pulls about yesterday through the next two weeks.
     </p>
     <ul>
-      <li>
-        <strong>Sign in with Google</strong> — pulls events. Window is the past 1 day and
-        the next 14. Older and further-out events stay on Google; they are not in lock inn.
-      </li>
-      <li><strong>Sync now</strong> — pull again. Needs a network.</li>
-      <li>
-        <strong>Sign out</strong> — <strong>Removes Google calendar events from this phone.
-        Your tasks stay.</strong> Hand-created local events stay too.
-      </li>
+      <li><strong>Sign in with Google</strong> brings events in.</li>
+      <li><strong>Sync now</strong> pulls again.</li>
+      <li><strong>Sign out</strong> removes those Google events from the phone. Tasks and events you created here stay.</li>
     </ul>
+    <p><strong>Allow calendar</strong> reads events already stored on the device, still without writing back.</p>
+
+    <h3>Tasks</h3>
     <p>
-      This is read-only. Deletes you make in lock inn on a synced event are local. The next
-      <strong>Sync now</strong> puts that event back. Edits to a synced event work the same way —
-      the next pull replaces Google-sourced rows.
+      Color dots choose a list. You only see that list. Create one with <strong>+</strong>
+      (name, color, optional icon) if none exists yet.
     </p>
     <p>
-      <strong>Allow calendar</strong> is the fallback. Body: <strong>Reads events on this phone
-      so they can reach the lock card.</strong> That is the device calendar permission, not
-      Google Sign-In. Use it when you want events already on the phone without signing in.
-      Also read-only.
-    </p>
-    <p class="note">
-      If Google Sign-In shows <strong>Access blocked</strong> and mentions LockDesk, that is
-      still lock inn — Google has not finished verifying the project yet. Email
-      <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> with the Gmail you used and we
-      will add you. Retrying the same account will not fix it.
+      Type in the field and submit to add. Typing also filters. Check a card to complete it;
+      tap the card to open it. There is no full edit screen yet — due is a date, not a time.
     </p>
 
-    <h2 id="tasks">Tasks</h2>
+    <h3>Reminders</h3>
     <p>
-      A row of color dots at the top is the list selector (<strong>Lists</strong>). The selected
-      list’s name is the page title, in that list’s color. If you have not created a list yet,
-      the title falls back to <strong>Inbox</strong> — create a list with the <strong>+</strong>
-      on the rail first. You only see that list’s tasks. Never all lists at once.
-    </p>
-    <p>
-      The field reads <strong>Add a task to</strong> the selected list. Submit creates into
-      that list with silent defaults: no date, no time, no priority. Typing in the field
-      filters the visible list live. No matches: <strong>None match.</strong> Empty list:
-      <strong>Type above to add one.</strong> All done: <strong>Nothing open in this list.</strong>
-    </p>
-    <p>
-      Tap the check on a card to complete it. Tap the card itself to open the item. Undated
-      open tasks still show on today and can appear on the lock image.
-    </p>
-    <p>
-      There is no <strong>Edit task</strong> button in this build. Due is a date, not a time —
-      you will not find a due-time picker. Quick-add and complete are the task flow.
-    </p>
-    <h3>New list</h3>
-    <p>
-      Tap the <strong>+</strong> on the list rail. Sheet title <strong>New list</strong>.
-      <strong>Name</strong>, eight color swatches, optional icon
-      (<strong>Home</strong>, <strong>Work</strong>, <strong>Book</strong>, <strong>Heart</strong>,
-      <strong>Cart</strong>, <strong>Flag</strong>), one <strong>Create</strong>.
+      <strong>Remind me…</strong> creates an enabled reminder one hour from now. Each row
+      has an <strong>Enabled</strong> switch; tap the row to change time or delete.
+      The alert says <strong>Due now.</strong> There is no snooze.
     </p>
 
-    <h2 id="reminders">Reminders</h2>
-    <p>
-      Field: <strong>Remind me…</strong> Submit creates an enabled reminder one hour from now.
-      That default is silent — the field does not spell it out.
-    </p>
-    <p>
-      Each row has an <strong>Enabled</strong> switch. Off means it will not fire. Tap the card
-      to open <strong>Edit reminder</strong>: Title, Date, Start, optional Notes, Enabled,
-      <strong>Delete reminder</strong>. There is no reminder-offset field and no snooze.
-    </p>
-    <p>
-      When it fires, the notification says <strong>Due now.</strong> That is the alert. There
-      is no snooze action on it.
-    </p>
-    <p>
-      Groups: upcoming first, then <strong>Earlier</strong>. Empty: <strong>None yet.</strong>
-      Nothing upcoming: <strong>Nothing coming up.</strong>
-    </p>
-
-    <h2 id="detail">Opening an item</h2>
-    <p>
-      Tap a task or event on today, tasks, or calendar. That is the detail screen. Reminders
-      stay on their own list.
-    </p>
-    <p>Header is flat — title, date and time. No filled card.</p>
-    <p>
-      Tiles underneath, when they apply: a countdown (<strong>Starts in</strong>),
-      <strong>List</strong>, <strong>Where</strong>. Notes sit below as a quiet list.
-    </p>
-    <p>Bottom pills:</p>
-    <ul>
-      <li>Task: <strong>Complete</strong> (filled) and <strong>Delete</strong>.</li>
-      <li>
-        Event: <strong>Open in Calendar</strong> (filled — opens the system calendar, not a
-        write-back), <strong>Edit event</strong>, <strong>Delete event</strong>. A synced event
-        with a ticket link may also show <strong>Open ticket</strong>.
-      </li>
-    </ul>
-    <p>
-      <strong>Edit event</strong> is the same local sheet as <strong>Add event</strong>. For a
-      Google-synced event, the next <strong>Sync now</strong> will replace your local edit.
-      <strong>Delete event</strong> on a synced row behaves the same way — it comes back on the
-      next pull. Delete it in Google Calendar if you want it gone for good.
-    </p>
-    <p>No snooze on this screen. Reminders do not open here.</p>
+    <h3>Opening an item</h3>
+    <div class="split split-2">
+      <div class="card">
+        <h3>Task</h3>
+        <p><strong>Complete</strong> or <strong>Delete</strong>.</p>
+      </div>
+      <div class="card">
+        <h3>Event</h3>
+        <p><strong>Open in Calendar</strong>, <strong>Edit event</strong>, or <strong>Delete event</strong>.</p>
+      </div>
+    </div>
+    <p>A change to a Google-synced event is local. The next <strong>Sync now</strong> puts Google’s copy back. Reminders do not open this screen.</p>
 
     <h2 id="lock">Lock screen</h2>
-    <p>Right pill. Page title: <strong>lock screen</strong>. Large phone preview on a quiet stage.</p>
-    <p>Status line:</p>
-    <ul>
-      <li><strong>Off</strong> — not writing a lock wallpaper.</li>
-      <li><strong>Ready to apply</strong> — enabled, not yet on the device.</li>
-      <li><strong>Live · updated</strong> {time} — the image is on the lock wallpaper.</li>
-    </ul>
-    <p>Actions:</p>
-    <ul>
-      <li><strong>Show on lock screen</strong> — enable and write.</li>
-      <li>
-        <strong>Update now</strong> — rewrite the current image. Use this if another app took
-        the lock wallpaper, or if the preview looks right and the device does not.
-      </li>
-      <li><strong>Remove</strong> — restore the previous lock wallpaper. Home is not touched.</li>
-    </ul>
     <p>
-      Caption under the looks: <strong>Home wallpaper stays.</strong> If another app replaces
-      the lock image: <strong>If another app replaces it, tap Update now.</strong>
-    </p>
-    <p>
-      The image sits behind the system clock and keyguard. Your PIN, pattern, or password is
-      never covered. That is architecture, not a setting.
-    </p>
-    <p>
-      OEM and Android builds vary. Some phones report <strong>This phone can’t set a lock
-      screen.</strong> or <strong>Wallpaper changes are blocked.</strong> Settings will show
-      that on the <strong>Wallpaper</strong> card. We cannot override a manufacturer that
-      blocks the API.
-    </p>
-    <p>
-      Collapsed under <strong>more options</strong> (body: <strong>Layout, what appears, and
-      privacy.</strong>): <strong>Show</strong> / <strong>hide options</strong>.
+      The right pill opens the studio. lock inn writes a still image to the lock wallpaper
+      only. It never covers PIN, pattern, or password, and it never changes home.
     </p>
     <ul>
-      <li>
-        <strong>layout</strong> — <strong>Text size</strong> (Small, Medium, Large).
-        <strong>Vertical position</strong> slider; <strong>Higher stays clear of the clock.</strong>
-        <strong>Up to N items</strong> (free max 4, Pro max 8). <strong>Alignment</strong>
-        (Start, Center).
-      </li>
-      <li>
-        <strong>what to show</strong> — <strong>Events</strong>, <strong>Tasks</strong>,
-        <strong>Reminders</strong>. With more than one task list, a <strong>List</strong>
-        chip row (<strong>All</strong> plus each list name).
-        <strong>Show tomorrow after today ends</strong>.
-      </li>
-      <li>
-        <strong>privacy</strong> — <strong>Hide titles</strong> (body: <strong>Shows Busy or
-        Task instead.</strong> Events become <strong>Busy</strong>, tasks
-        <strong>Task</strong>, reminders <strong>Reminder</strong>).
-        <strong>Updated time</strong> stamps the image.
-      </li>
+      <li><strong>Show on lock screen</strong> turns it on.</li>
+      <li><strong>Update now</strong> rewrites the image — use this if another app took the lock wallpaper.</li>
+      <li><strong>Remove</strong> restores the previous lock image.</li>
     </ul>
-    <p>Filters are why a full desk can still look empty on lock. Check these before assuming a bug.</p>
+    <p>
+      Status should read <strong>Live</strong>. If the phone says
+      <strong>Wallpaper changes are blocked</strong>, allow it in Settings. A few devices
+      cannot set a lock wallpaper at all.
+    </p>
+    <p>
+      Under <strong>more options</strong>: how many rows (4 free, 8 Pro), which kinds to
+      show, and <strong>Hide titles</strong> — names become <strong>Busy</strong>,
+      <strong>Task</strong>, or <strong>Reminder</strong>. Times stay.
+    </p>
 
-    <h2 id="looks">Lock looks (cards &amp; background)</h2>
-    <p>Section <strong>cards</strong>. The day stays the same; the card is the frame.</p>
-    <p><strong>Free</strong></p>
-    <ul>
-      <li><strong>Lucent</strong> — Clear. The day shows through.</li>
-      <li><strong>Minimal</strong> — Plain list, large type.</li>
-      <li><strong>Micrographics</strong> — Date chips and a big time. Extra: <strong>Plate</strong> or <strong>On wallpaper</strong>.</li>
-    </ul>
-    <p><strong>Pro</strong> (chip reads <code>Name · pro</code> until you buy)</p>
-    <ul>
-      <li><strong>Paper</strong> — Cream note, ruled lines.</li>
-      <li><strong>Vintage</strong> — Tilted page. Late items in rust.</li>
-      <li>
-        <strong>Terminal</strong> — A command line. Green or amber. Extra:
-        <strong>Color</strong> → <strong>Green</strong> / <strong>Amber</strong>. This is the
-        phosphor card. It is not the free third card.
-      </li>
-      <li><strong>Queue</strong> — Now playing. Up next. Tracks left.</li>
-      <li><strong>Tab</strong> — The day, itemized. You still owe it.</li>
-      <li><strong>Board</strong> — Split-flap departures. Station, date, then the list.</li>
-      <li><strong>Year</strong> — Dots on the field.</li>
-    </ul>
-    <p>Locked cards do not apply. Use <strong>Get pro</strong> on this page, or <strong>Unlock pro</strong> in settings.</p>
-    <p>Section <strong>background &amp; colors</strong>:</p>
-    <ul>
-      <li><strong>Gradient</strong> — free.</li>
-      <li><strong>Solid</strong> — free.</li>
-      <li>
-        <strong>Photo</strong> — Pro. <strong>Choose photo</strong>, then
-        <strong>Photo dim</strong>. <strong>From photo</strong> pulls the palette from the image.
-      </li>
-    </ul>
+    <h3>Looks</h3>
+    <p>Free cards: <strong>Lucent</strong>, <strong>Minimal</strong>, <strong>Micrographics</strong>. Background: gradient or solid.</p>
+    <p>Pro cards: <strong>Paper</strong>, <strong>Vintage</strong>, <strong>Terminal</strong>, <strong>Queue</strong>, <strong>Tab</strong>, <strong>Board</strong>, <strong>Year</strong>, plus a photo background.</p>
 
-    <h2 id="settings">Settings</h2>
+    <h2 id="pro">Pro</h2>
     <p>
-      Gear, top right. Page title <strong>settings</strong>. Quiet rows: a label, one muted
-      line, a trailing action. The only filled surfaces are the two status cards.
+      One-time purchase on Google Play. It only changes how the lock wallpaper looks.
+      The desk stays free.
     </p>
-    <p><strong>account</strong></p>
-    <ul>
-      <li><strong>Google Calendar</strong> — <strong>Sign in with Google</strong> / <strong>Sync now</strong> / <strong>Sign out</strong>, as above.</li>
-      <li><strong>Allow calendar</strong> — device calendar read.</li>
-    </ul>
-    <p><strong>lock screen</strong></p>
-    <ul>
-      <li>
-        <strong>Wallpaper</strong> card — <strong>Ready.</strong> when the API is available.
-        Needs action: <strong>Wallpaper changes are blocked.</strong> plus <strong>Allow</strong>.
-      </li>
-      <li>
-        <strong>Battery</strong> card — <strong>On</strong> when unrestricted. Needs action:
-        <strong>Background updates may pause.</strong> plus <strong>Review</strong>. Late lock
-        refreshes and late reminders usually start here.
-      </li>
-      <li>
-        <strong>Lock screen</strong> row — <strong>Your day on the lock screen. Home stays.</strong>
-        Action: <strong>Open</strong>.
-      </li>
-    </ul>
-    <p><strong>lock inn pro</strong></p>
-    <ul>
-      <li>
-        <strong>Unlock pro</strong> — <strong>All cards, photo backgrounds, up to 8 lock rows.
-        One-time ·</strong> {price from Play}. Action: <strong>Get pro</strong>.
-      </li>
-      <li>
-        After purchase: <strong>pro unlocked</strong> —
-        <strong>Tied to your Google Play account. Restore on a new phone anytime.</strong>
-      </li>
-      <li>
-        <strong>Restore purchases</strong> — <strong>Already bought pro on this Play account?</strong>
-        Action: <strong>Restore</strong>.
-      </li>
-    </ul>
-    <p>
-      Pro is the Play account on the device. It is not Google Calendar Sign-In. Signing out
-      of calendar does not remove Pro.
-    </p>
-    <p><strong>notifications</strong></p>
-    <ul>
-      <li>
-        <strong>Reminder alerts</strong> — <strong>Turn on</strong> if the channel is off. Body
-        when off: <strong>Reminders won’t alert you.</strong>
-      </li>
-      <li>
-        <strong>Exact reminders</strong> — only shown when Android has not granted exact alarms.
-        Body: <strong>Reminders may arrive late.</strong> Action: <strong>Allow</strong>.
-      </li>
-    </ul>
-    <p><strong>appearance</strong></p>
-    <ul>
-      <li>
-        <strong>Theme</strong> — <strong>Graphite, light or dark, with the system.</strong>
-        Trailing value: <strong>System</strong>. Display only. There is no in-app light/dark
-        picker. Change the phone theme if you want the other one.
-      </li>
-    </ul>
-    <p><strong>about</strong></p>
-    <ul>
-      <li><strong>lock inn</strong> — <strong>Version 1.7.1</strong>.</li>
-      <li><strong>Intro</strong> — <strong>See the screens again.</strong> Action: <strong>Replay</strong>.</li>
-    </ul>
-
-    <h2 id="pro">lock inn pro</h2>
-    <p>One-time Play product: <code>lockinn_pro</code>. Not a subscription.</p>
-    <p>Pro gates wallpaper cosmetics only:</p>
     <table>
       <thead>
         <tr><th></th><th>Free</th><th>Pro</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Cards</td>
-          <td>Lucent, Minimal, Micrographics</td>
-          <td>those three, plus Paper, Vintage, Terminal, Queue, Tab, Board, Year</td>
-        </tr>
-        <tr>
-          <td>Background</td>
-          <td>Gradient, Solid</td>
-          <td>those, plus Photo</td>
-        </tr>
-        <tr>
-          <td>Rows</td>
-          <td>up to 4</td>
-          <td>up to 8</td>
-        </tr>
+        <tr><th>Cards</th><td>Lucent, Minimal, Micrographics</td><td>+ Paper, Vintage, Terminal, Queue, Tab, Board, Year</td></tr>
+        <tr><th>Background</th><td>Gradient, solid</td><td>+ Photo</td></tr>
+        <tr><th>Rows</th><td>up to 4</td><td>up to 8</td></tr>
       </tbody>
     </table>
     <p>
-      Today, calendar, tasks, reminders, Google read-sync, device calendar, notifications,
-      and the lock wallpaper itself stay free. You do not need Pro to put the desk on lock.
-    </p>
-    <p>
-      Buy from <strong>Get pro</strong> in settings or on the lock screen. Restore from
-      <strong>Restore purchases</strong>. Ownership follows the Google Play account on the
-      phone. Calendar Sign-In can be a different Google account; that does not move the purchase.
+      Buy with <strong>Get pro</strong>. Restore with <strong>Restore purchases</strong>.
+      Ownership follows the Play account on the phone — not Calendar sign-in.
     </p>
 
-    <h2 id="permissions">Permissions, briefly</h2>
-    <p>
-      Asked when a feature needs them. None of these is an overlay permission. lock inn does
-      not request draw-over-apps.
-    </p>
-    <ul>
-      <li><strong>Calendar read</strong> — <strong>Allow calendar</strong>, so on-device events can reach the desk and the lock image.</li>
-      <li><strong>Notifications</strong> — <strong>Reminder alerts</strong>, and the reminder channel (<strong>Due now.</strong>).</li>
-      <li><strong>Exact alarm</strong> — <strong>Exact reminders</strong>, so the alert can fire on the minute.</li>
-      <li><strong>Set wallpaper</strong> — lock wallpaper only.</li>
-      <li><strong>Boot</strong> — so reminders and the lock image can recover after reboot.</li>
-      <li><strong>Internet</strong> — Google Calendar pull, Play purchase and restore.</li>
-      <li><strong>Billing</strong> — <code>lockinn_pro</code>.</li>
-    </ul>
-    <p>Refuse any of these and the matching feature stays off. The rest of the desk keeps working.</p>
-
-    <h2 id="privacy">What stays on the phone</h2>
-    <p>
-      Tasks, lists, reminders, hand-created events, lock-screen settings, and a chosen photo
-      copy live in the app’s on-device store. No lock inn cloud account.
-    </p>
-    <p>Needs a network: <strong>Sign in with Google</strong>, <strong>Sync now</strong>, <strong>Get pro</strong>, <strong>Restore</strong>.</p>
-    <p>
-      Works offline: the desk, local events, reminders already scheduled, and the lock
-      wallpaper already applied. The image will not pick up a new Google event until you
-      sync again.
-    </p>
-    <p>
-      Sign-out, clear data, and uninstall are covered in the FAQ and on
-      <a href="account-deletion.html">Delete account and data</a>.
-    </p>
+    <h2>Settings</h2>
+    <p>Gear, top right. Most rows are a label and one action. Two cards at lock screen need attention only when something is wrong: wallpaper blocked, or battery pausing background updates.</p>
+    <p>Turn on <strong>Reminder alerts</strong>. If <strong>Exact reminders</strong> appears, allow it so alerts can fire on time. Theme follows the phone.</p>
 
     <h2 id="faq">FAQ</h2>
 
     <details>
-      <summary>Google says Access blocked, or mentions LockDesk</summary>
+      <summary>Google says Access blocked, or shows LockDesk</summary>
       <p>
-        Google has not finished verifying lock inn yet, so Sign-In is limited to accounts we
-        have approved. The sheet may still say <strong>LockDesk</strong> — that is the same
-        project, not a different app.
-      </p>
-      <p>
-        Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> with the Gmail you
-        tapped. Once we add it, Sign-In will work. Trying again with the same account before
-        that will keep failing.
+        Sign-in is limited until Google finishes verifying the app. The sheet may still say
+        <strong>LockDesk</strong> — that is lock inn, not another product. Email
+        <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> with the Gmail you used.
       </p>
     </details>
-
     <details>
-      <summary>I signed in with Google. Why isn’t Pro unlocked?</summary>
+      <summary>I signed in. Why isn’t Pro unlocked?</summary>
       <p>
-        Calendar and Pro use two different Google accounts, and they do not unlock each other.
-      </p>
-      <ul>
-        <li><strong>Sign in with Google</strong> in Settings → <strong>account</strong> is only for Calendar.</li>
-        <li><strong>Get pro</strong> and <strong>Restore purchases</strong> follow the Google Play account on the phone.</li>
-      </ul>
-      <p>
-        You can sync calendar on one Gmail and own Pro on another. Signing out of Calendar
-        never removes Pro.
+        Calendar sign-in and Pro are different. <strong>Sign in with Google</strong> only
+        syncs calendar. <strong>Get pro</strong> follows the Play account on the phone.
+        Signing out of calendar does not remove Pro.
       </p>
     </details>
-
     <details>
-      <summary>I deleted a Google event in lock inn. It came back.</summary>
+      <summary>A Google event came back — or a new event isn’t on Google</summary>
       <p>
-        lock inn reads Google Calendar. It does not own those events. The next
-        <strong>Sync now</strong> copies Google’s version back onto the phone, so a local
-        delete does not last.
-      </p>
-      <p>
-        To remove it for good, delete it in Google Calendar, then sync. Events you created
-        with <strong>Add event</strong> in lock inn are local — those stay gone when you
-        delete them here.
+        lock inn does not write to Google Calendar. Delete or edit a synced event in Google
+        Calendar, then sync. <strong>Add event</strong> in lock inn stays on this phone.
       </p>
     </details>
-
     <details>
-      <summary>I created an event here. Why isn’t it on Google Calendar?</summary>
-      <p>
-        <strong>Add event</strong> saves on this phone only. lock inn never writes to Google
-        Calendar. If you need the event on Google as well, create it in the Google Calendar
-        app, then sync. <strong>Open in Calendar</strong> on a synced event opens Google’s
-        copy; it does not upload a local one.
-      </p>
-    </details>
-
-    <details>
-      <summary>The lock screen didn’t change</summary>
-      <p>
-        lock inn paints the <em>lock</em> wallpaper, not the home screen. Lock the phone to
-        see it. Then:
-      </p>
+      <summary>The lock wallpaper didn’t change</summary>
+      <p>Lock the phone — it never appears on home. Then:</p>
       <ol>
-        <li>Open the right pill. Status should read <strong>Live</strong>. If it says <strong>Off</strong>, tap <strong>Show on lock screen</strong>.</li>
-        <li>If the in-app preview looks right but the phone does not, tap <strong>Update now</strong>.</li>
-        <li>If another wallpaper app took the lock image, tap <strong>Update now</strong> again. You may need to stop that other app, or it will keep replacing ours.</li>
-        <li>In Settings, if the <strong>Wallpaper</strong> card says <strong>Wallpaper changes are blocked.</strong>, tap <strong>Allow</strong>, then update.</li>
-        <li>If the phone says <strong>This phone can’t set a lock screen.</strong>, that device cannot host this feature.</li>
+        <li>Right pill should say <strong>Live</strong>. If not, tap <strong>Show on lock screen</strong>.</li>
+        <li>If the preview is right but the phone is not, tap <strong>Update now</strong>.</li>
+        <li>If wallpaper is blocked, tap <strong>Allow</strong> in Settings, then update.</li>
       </ol>
     </details>
-
     <details>
-      <summary>The PIN, pattern, or password still shows. Is the lock image broken?</summary>
+      <summary>The PIN still shows</summary>
       <p>
-        No. Android’s unlock screen always sits on top of the wallpaper. lock inn never
-        covers PIN, pattern, or password entry — that is how the feature is built.
+        That is correct. Android’s unlock screen always sits on top. If the PIN pad is
+        missing, email us — do not send a photo of the code.
       </p>
+    </details>
+    <details>
+      <summary>Reminders are late or silent</summary>
       <p>
-        If you <em>cannot</em> see the unlock pad, that would be the bug. Email us right away,
-        without a photo of the PIN or pattern.
+        Turn on <strong>Reminder alerts</strong>. Allow <strong>Exact reminders</strong> if
+        you see that row. If Battery says updates may pause, tap <strong>Review</strong> and
+        exempt lock inn. The reminder’s <strong>Enabled</strong> switch must be on.
+      </p>
+    </details>
+    <details>
+      <summary>The lock image is empty</summary>
+      <p>
+        It only draws what you enabled, up to the row cap. Check <strong>what to show</strong>,
+        which list is selected, and <strong>Hide titles</strong>. If today says
+        <strong>Nothing today</strong>, lock is empty on purpose. Google events outside
+        yesterday–two weeks ahead will not appear.
+      </p>
+    </details>
+    <details>
+      <summary>Restore Pro, sign out, or delete data</summary>
+      <p>
+        Restore on the same Play account via <strong>Restore purchases</strong>.
+        <strong>Sign out</strong> drops synced Google events; everything you created here stays.
+        To wipe the phone copy: sign out, then clear app data or uninstall. Play keeps Pro.
+        Steps: <a href="account-deletion.html">Delete account and data</a>.
+      </p>
+    </details>
+    <details>
+      <summary>Offline, widgets, light and dark</summary>
+      <p>
+        The desk, local events, and a lock image already applied work offline. Sign-in, sync,
+        and purchases need a network. There is no home widget. Theme follows the system.
       </p>
     </details>
 
-    <details>
-      <summary>Did lock inn change my home wallpaper?</summary>
-      <p>
-        It should not. Only the lock wallpaper is written. If home changed, another app or
-        the phone’s wallpaper picker likely applied both.
-      </p>
-      <p>
-        <strong>Remove</strong> restores the previous lock wallpaper. It cannot repair a home
-        image something else replaced. If home moved after using lock inn, email us the phone
-        model so we can check that device.
-      </p>
-    </details>
-
-    <details>
-      <summary>Reminders are late, or they don’t fire</summary>
-      <p>Work through Settings, then the reminder itself:</p>
-      <ul>
-        <li><strong>Reminder alerts</strong> must be on. If it says <strong>Reminders won’t alert you.</strong>, tap <strong>Turn on</strong>.</li>
-        <li>If <strong>Exact reminders</strong> is visible, tap <strong>Allow</strong>. Without it, Android may delay the alarm.</li>
-        <li>If the <strong>Battery</strong> card says <strong>Background updates may pause.</strong>, tap <strong>Review</strong> and exempt lock inn. Some phones still need a battery exception in system settings.</li>
-        <li>The reminder’s <strong>Enabled</strong> switch must be on.</li>
-      </ul>
-      <p>There is no snooze. Once a reminder has fired, it will not alert again.</p>
-    </details>
-
-    <details>
-      <summary>Nothing shows on the lock image</summary>
-      <p>
-        Today can be full and the lock image still quiet. The lock screen only draws what you
-        asked it to, up to the row limit.
-      </p>
-      <ul>
-        <li>Under <strong>more options</strong> → <strong>what to show</strong>, turn on Events, Tasks, or Reminders as needed.</li>
-        <li><strong>List</strong> may be pinned to one task list instead of <strong>All</strong>.</li>
-        <li><strong>Up to N items</strong> may be low, so earlier items filled the slots.</li>
-        <li><strong>Show tomorrow after today ends</strong> may be off after the day is over.</li>
-        <li><strong>Hide titles</strong> may be on — the rows are there, labeled <strong>Busy</strong>, <strong>Task</strong>, or <strong>Reminder</strong>.</li>
-        <li>Google only syncs about the past day and the next two weeks, so a later event will not appear yet.</li>
-        <li>If today itself says <strong>Nothing today</strong>, the lock image is correctly empty.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>What does Hide titles do?</summary>
-      <p>
-        On the lock wallpaper only, <strong>Hide titles</strong> replaces names with
-        <strong>Busy</strong>, <strong>Task</strong>, or <strong>Reminder</strong>. Times stay.
-        Turn it off to show real titles again. Screens inside the app never hide titles.
-      </p>
-    </details>
-
-    <details>
-      <summary>I got a new phone. How do I get Pro back?</summary>
-      <p>
-        Install lock inn from Play, signed into the <strong>same Google Play account that
-        paid</strong>. Then Settings → <strong>Restore purchases</strong> →
-        <strong>Restore</strong>. You should see <strong>Pro restored.</strong>
-      </p>
-      <p>
-        Calendar Sign-In is separate — sign into Calendar again if you want events.
-        <strong>No purchase on this Play account.</strong> means this Play user did not buy
-        Pro, or you are on a different Play account than the one that paid.
-      </p>
-    </details>
-
-    <details>
-      <summary>What happens when I Sign out?</summary>
-      <p>
-        <strong>Sign out</strong> ends Google Calendar in lock inn and removes synced Google
-        events from this phone. You will see
-        <strong>Signed out. Synced calendar events were removed from this phone.</strong>
-      </p>
-      <p>
-        Tasks, lists, reminders, events you created in lock inn, lock-screen settings, and
-        Pro all stay. Google Calendar on Google’s side is untouched — we never write to it,
-        so we never delete it there.
-      </p>
-    </details>
-
-    <details>
-      <summary>How do I uninstall or delete my data?</summary>
-      <p>lock inn does not keep a cloud account of its own. Everything on the desk lives on the phone.</p>
-      <ol>
-        <li><strong>Sign out</strong> if you signed in.</li>
-        <li>Android Settings → Apps → lock inn → Storage → clear data, or uninstall. That removes the on-device desk, sign-in tokens, and any copied lock photo.</li>
-      </ol>
-      <p>
-        Play keeps the Pro purchase on the Play account. Uninstalling does not refund it;
-        <strong>Restore</strong> brings it back on a new install. Google Calendar keeps
-        Google’s copy of your events.
-      </p>
-      <p>Full steps: <a href="account-deletion.html">Delete account and data</a>.</p>
-    </details>
-
-    <details>
-      <summary>Does it work offline?</summary>
-      <p>
-        Yes for the desk: local tasks, local events, reminders already scheduled, and a lock
-        image already applied. <strong>Sign in with Google</strong>, <strong>Sync now</strong>,
-        <strong>Get pro</strong>, and <strong>Restore</strong> need a network. A new Google
-        event will not reach the lock image until you sync again.
-      </p>
-    </details>
-
-    <details>
-      <summary>Can I pick light or dark in the app?</summary>
-      <p>
-        Not from lock inn. <strong>Theme</strong> follows the phone and shows
-        <strong>System</strong>. Change light or dark in Android display settings.
-      </p>
-    </details>
-
-    <details>
-      <summary>Is there a home-screen widget?</summary>
-      <p>
-        No. The day lives on the lock wallpaper. The home screen is left alone on purpose.
-      </p>
-    </details>
-
-    <details>
-      <summary>What should I expect in this beta?</summary>
-      <p>
-        This is an early build. The desk and lock wallpaper are the product. A few things are
-        still simple on purpose:
-      </p>
-      <ul>
-        <li>Tasks are quick-add and complete. There is no full edit sheet on screen yet, and due dates are dates, not times.</li>
-        <li>Events you add here stay on the phone. Google Calendar is read-only, about one day back and two weeks ahead.</li>
-        <li>Reminders do not snooze.</li>
-        <li>There is no home-screen widget and no in-app theme picker.</li>
-        <li>On some phones another app can steal the lock wallpaper. <strong>Update now</strong> puts lock inn back.</li>
-        <li>Google Sign-In may still show the name LockDesk. That is us.</li>
-      </ul>
-      <p>
-        If something fails in a way this page does not describe, tell us. That is the useful
-        kind of report.
-      </p>
-    </details>
-
-    <details>
-      <summary>How do I send feedback?</summary>
-      <p>Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a>.</p>
-      <p>
-        Include the phone model, Android version, and what you expected versus what happened.
-        A photo of the lock screen helps for wallpaper bugs. Do not send a screenshot that
-        shows your PIN, pattern, or password.
-      </p>
-    </details>
-
-    <h2 id="stuck">Still stuck</h2>
+    <h2 id="help">Help</h2>
     <p>
-      Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a>. Mention the version
-      in Settings (<strong>Version 1.7.1</strong>) and the phone you are on.
+      <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> —
+      include v1.7.1, phone model, and what you expected. A lock-screen photo helps.
+      Never send PIN, pattern, or password.
     </p>
-    <p>Legal pages next to this one:</p>
-    <ul>
-      <li><a href="privacy-policy.html">Privacy policy</a></li>
-      <li><a href="terms.html">Terms of service</a></li>
-      <li><a href="account-deletion.html">Delete account and data</a></li>
-    </ul>
-    <p class="muted">App package: com.lockinn · lock inn</p>
+    <p class="muted">
+      <a href="privacy-policy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="account-deletion.html">Delete account</a>
+    </p>
   </main>
 </body>
 </html>
