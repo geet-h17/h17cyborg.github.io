@@ -111,9 +111,8 @@
       where Android put them.
     </p>
     <p>
-      This page is for closed-testing testers who installed from Play. It matches version
-      1.7.1, including the limits. If a control is not named here, it is not in the build
-      you have.
+      This guide matches version 1.7.1. If a control is not named here, it is not in the
+      build you have.
     </p>
 
     <div class="toc">
@@ -152,14 +151,10 @@
 
     <h2 id="start">First two minutes</h2>
     <p>
-      Install from the Play testing track. Uninstall any leftover debug APK first — same
-      package, different signature, and Play will refuse the install. See the FAQ if that happens.
-    </p>
-    <p>
       Open the app. The intro is short. After it, today may show <strong>put it on lock</strong>.
       One tap on <strong>Show on lock screen</strong> writes today’s desk onto the lock wallpaper.
       <strong>Continue</strong> if you want it now; <strong>Not now</strong> if you want to look
-      around first. Calendar sign-in and alerts wait in settings. They are not a gate.
+      around first. Calendar sign-in and alerts wait in settings — they are optional.
     </p>
     <ol>
       <li>Add a task on tasks. You should see it on today (undated open tasks count as today).</li>
@@ -265,9 +260,10 @@
       Also read-only.
     </p>
     <p class="note">
-      Closed testing: Google Sign-In only works if your Gmail is on the Cloud test-user list.
-      If you see <strong>Access blocked</strong> and a name like LockDesk, that is this project —
-      email us the Gmail. Do not keep retrying.
+      If Google Sign-In shows <strong>Access blocked</strong> and mentions LockDesk, that is
+      still lock inn — Google has not finished verifying the project yet. Email
+      <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> with the Gmail you used and we
+      will add you. Retrying the same account will not fix it.
     </p>
 
     <h2 id="tasks">Tasks</h2>
@@ -535,14 +531,9 @@
       and the lock wallpaper itself stay free. You do not need Pro to put the desk on lock.
     </p>
     <p>
-      Buy from <strong>Get pro</strong> (settings or lock screen). Restore from
-      <strong>Restore purchases</strong>. The Play account that paid is the account that owns
-      it. Calendar Sign-In can be a different Google account; that does not move the purchase.
-    </p>
-    <p>
-      Closed testing: install from Play or billing will not work. License testers see a test
-      card. If you intend to pay for real, you must not be on the Play license-testing list —
-      ask us to take you off first.
+      Buy from <strong>Get pro</strong> in settings or on the lock screen. Restore from
+      <strong>Restore purchases</strong>. Ownership follows the Google Play account on the
+      phone. Calendar Sign-In can be a different Google account; that does not move the purchase.
     </p>
 
     <h2 id="permissions">Permissions, briefly</h2>
@@ -580,228 +571,238 @@
     <h2 id="faq">FAQ</h2>
 
     <details>
-      <summary>Why does Google say Access blocked, or show LockDesk verification?</summary>
+      <summary>Google says Access blocked, or mentions LockDesk</summary>
       <p>
-        OAuth consent is in <strong>Testing</strong>. Your Gmail must be on that Cloud
-        project’s test-user list. If it is not, Google shows <strong>Access blocked</strong>
-        (often error 403) and Sign-In dies.
+        Google has not finished verifying lock inn yet, so Sign-In is limited to accounts we
+        have approved. The sheet may still say <strong>LockDesk</strong> — that is the same
+        project, not a different app.
       </p>
       <p>
-        The Cloud project is still named LockDesk. Google’s sheet may say LockDesk even though
-        the app on your phone is lock inn. That is the same project, not a second app.
-      </p>
-      <p>
-        Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> with the Gmail you used.
-        Do not keep retrying — it will not self-heal until you are on the list.
-      </p>
-    </details>
-
-    <details>
-      <summary>Why is Play showing a test card instead of charging me?</summary>
-      <p>
-        You are on Play’s license-testing list. That is correct for most closed testers. The
-        purchase still unlocks Pro; the charge is a test charge.
-      </p>
-      <p>
-        If you want to pay for real, you must come off that list first. Tell us before you
-        tap <strong>Get pro</strong>.
-      </p>
-    </details>
-
-    <details>
-      <summary>Play says I can’t install / the signature is different</summary>
-      <p>
-        You still have a debug (sideloaded) APK of lock inn. Same package,
-        <code>com.lockinn</code>, different signing key. Play will not overwrite it.
-      </p>
-      <p>
-        Uninstall lock inn, then install from the testing-track link. Do not sideload a debug
-        APK over the Play build, or the next Play update will fail the same way.
+        Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a> with the Gmail you
+        tapped. Once we add it, Sign-In will work. Trying again with the same account before
+        that will keep failing.
       </p>
     </details>
 
     <details>
       <summary>I signed in with Google. Why isn’t Pro unlocked?</summary>
-      <p>Two different accounts.</p>
+      <p>
+        Calendar and Pro use two different Google accounts, and they do not unlock each other.
+      </p>
       <ul>
-        <li><strong>Sign in with Google</strong> is Calendar. Settings → <strong>account</strong>.</li>
-        <li><strong>Get pro</strong> / <strong>Restore purchases</strong> is the Google Play account on the device.</li>
+        <li><strong>Sign in with Google</strong> in Settings → <strong>account</strong> is only for Calendar.</li>
+        <li><strong>Get pro</strong> and <strong>Restore purchases</strong> follow the Google Play account on the phone.</li>
       </ul>
       <p>
-        Signing into Calendar does not buy Pro. Buying Pro does not sign you into Calendar.
-        <strong>Sign out</strong> of Calendar does not remove Pro.
+        You can sync calendar on one Gmail and own Pro on another. Signing out of Calendar
+        never removes Pro.
       </p>
     </details>
 
     <details>
       <summary>I deleted a Google event in lock inn. It came back.</summary>
       <p>
-        Read-only sync. <strong>Sync now</strong> replaces Google-sourced rows with whatever
-        Google still has. Delete it in Google Calendar, then sync. Local <strong>Add event</strong>
-        rows do not come back, because they never lived on Google.
+        lock inn reads Google Calendar. It does not own those events. The next
+        <strong>Sync now</strong> copies Google’s version back onto the phone, so a local
+        delete does not last.
+      </p>
+      <p>
+        To remove it for good, delete it in Google Calendar, then sync. Events you created
+        with <strong>Add event</strong> in lock inn are local — those stay gone when you
+        delete them here.
       </p>
     </details>
 
     <details>
       <summary>I created an event here. Why isn’t it on Google Calendar?</summary>
       <p>
-        <strong>Add event</strong> is local only. lock inn does not write to Google Calendar.
-        Use the Google Calendar app (or <strong>Open in Calendar</strong> on a synced event)
-        if you need it on Google.
+        <strong>Add event</strong> saves on this phone only. lock inn never writes to Google
+        Calendar. If you need the event on Google as well, create it in the Google Calendar
+        app, then sync. <strong>Open in Calendar</strong> on a synced event opens Google’s
+        copy; it does not upload a local one.
       </p>
     </details>
 
     <details>
       <summary>The lock screen didn’t change</summary>
+      <p>
+        lock inn paints the <em>lock</em> wallpaper, not the home screen. Lock the phone to
+        see it. Then:
+      </p>
       <ol>
-        <li>Right pill → status should be <strong>Live</strong>. If <strong>Off</strong>, tap <strong>Show on lock screen</strong>.</li>
-        <li>Preview looks right, device does not → <strong>Update now</strong>.</li>
-        <li>Status mentions another app → tap <strong>Update now</strong>. Some OEM “lock screen magazine” apps will take it again; you may need to stop those.</li>
-        <li>Settings → <strong>Wallpaper</strong> card says <strong>Wallpaper changes are blocked.</strong> → <strong>Allow</strong>, then update.</li>
-        <li>Phone says <strong>This phone can’t set a lock screen.</strong> — that device cannot host this feature.</li>
-        <li>You looked at the home screen. Home wallpaper stays. Lock the phone.</li>
+        <li>Open the right pill. Status should read <strong>Live</strong>. If it says <strong>Off</strong>, tap <strong>Show on lock screen</strong>.</li>
+        <li>If the in-app preview looks right but the phone does not, tap <strong>Update now</strong>.</li>
+        <li>If another wallpaper app took the lock image, tap <strong>Update now</strong> again. You may need to stop that other app, or it will keep replacing ours.</li>
+        <li>In Settings, if the <strong>Wallpaper</strong> card says <strong>Wallpaper changes are blocked.</strong>, tap <strong>Allow</strong>, then update.</li>
+        <li>If the phone says <strong>This phone can’t set a lock screen.</strong>, that device cannot host this feature.</li>
       </ol>
     </details>
 
     <details>
-      <summary>The PIN / pattern / password still shows. Is the lock image broken?</summary>
+      <summary>The PIN, pattern, or password still shows. Is the lock image broken?</summary>
       <p>
-        No. The system keyguard is supposed to sit on top. lock inn never covers credential
-        entry. If you cannot see the PIN pad, that would be the bug — tell us immediately.
+        No. Android’s unlock screen always sits on top of the wallpaper. lock inn never
+        covers PIN, pattern, or password entry — that is how the feature is built.
+      </p>
+      <p>
+        If you <em>cannot</em> see the unlock pad, that would be the bug. Email us right away,
+        without a photo of the PIN or pattern.
       </p>
     </details>
 
     <details>
       <summary>Did lock inn change my home wallpaper?</summary>
       <p>
-        It should not. Lock flag only. If home changed, another app did it, or the OEM’s
-        wallpaper picker applied both. <strong>Remove</strong> restores the previous
-        <em>lock</em> wallpaper. It does not repair a home image something else replaced.
-        Email us with the phone model if home moved; that is a device we need to know about.
+        It should not. Only the lock wallpaper is written. If home changed, another app or
+        the phone’s wallpaper picker likely applied both.
+      </p>
+      <p>
+        <strong>Remove</strong> restores the previous lock wallpaper. It cannot repair a home
+        image something else replaced. If home moved after using lock inn, email us the phone
+        model so we can check that device.
       </p>
     </details>
 
     <details>
       <summary>Reminders are late, or they don’t fire</summary>
+      <p>Work through Settings, then the reminder itself:</p>
       <ul>
-        <li>Settings → <strong>Reminder alerts</strong> must be on. If the body says <strong>Reminders won’t alert you.</strong>, tap <strong>Turn on</strong>.</li>
-        <li><strong>Exact reminders</strong> → <strong>Allow</strong> if that row is visible. Without it, Android may batch the alarm.</li>
-        <li><strong>Battery</strong> card. If it says <strong>Background updates may pause.</strong>, tap <strong>Review</strong> and exempt lock inn. Aggressive OEMs still need a manual battery exception.</li>
-        <li>The row’s <strong>Enabled</strong> switch must be on.</li>
-        <li>There is no snooze. A fired reminder will not re-alert.</li>
+        <li><strong>Reminder alerts</strong> must be on. If it says <strong>Reminders won’t alert you.</strong>, tap <strong>Turn on</strong>.</li>
+        <li>If <strong>Exact reminders</strong> is visible, tap <strong>Allow</strong>. Without it, Android may delay the alarm.</li>
+        <li>If the <strong>Battery</strong> card says <strong>Background updates may pause.</strong>, tap <strong>Review</strong> and exempt lock inn. Some phones still need a battery exception in system settings.</li>
+        <li>The reminder’s <strong>Enabled</strong> switch must be on.</li>
       </ul>
+      <p>There is no snooze. Once a reminder has fired, it will not alert again.</p>
     </details>
 
     <details>
-      <summary>Nothing on the lock image</summary>
-      <p>Today can be full and the lock image still empty.</p>
+      <summary>Nothing shows on the lock image</summary>
+      <p>
+        Today can be full and the lock image still quiet. The lock screen only draws what you
+        asked it to, up to the row limit.
+      </p>
       <ul>
-        <li><strong>more options</strong> → <strong>what to show</strong>. If Events, Tasks, or Reminders is off, that kind is omitted.</li>
-        <li><strong>List</strong> is pinned to one task list instead of <strong>All</strong>.</li>
-        <li><strong>Up to N items</strong> is low, and earlier items filled the slots.</li>
-        <li><strong>Show tomorrow after today ends</strong> is off, and today is over.</li>
-        <li><strong>Hide titles</strong> is on — the rows are there, labeled Busy / Task / Reminder.</li>
-        <li>Google window is past 1 / next 14 days. An event next month will not sync.</li>
-        <li>It is actually an empty day. Today would say <strong>Nothing today</strong>.</li>
+        <li>Under <strong>more options</strong> → <strong>what to show</strong>, turn on Events, Tasks, or Reminders as needed.</li>
+        <li><strong>List</strong> may be pinned to one task list instead of <strong>All</strong>.</li>
+        <li><strong>Up to N items</strong> may be low, so earlier items filled the slots.</li>
+        <li><strong>Show tomorrow after today ends</strong> may be off after the day is over.</li>
+        <li><strong>Hide titles</strong> may be on — the rows are there, labeled <strong>Busy</strong>, <strong>Task</strong>, or <strong>Reminder</strong>.</li>
+        <li>Google only syncs about the past day and the next two weeks, so a later event will not appear yet.</li>
+        <li>If today itself says <strong>Nothing today</strong>, the lock image is correctly empty.</li>
       </ul>
     </details>
 
     <details>
       <summary>What does Hide titles do?</summary>
       <p>
-        <strong>Hide titles</strong> on lock screen → privacy. Event titles become
-        <strong>Busy</strong>. Tasks become <strong>Task</strong>. Reminders become
-        <strong>Reminder</strong>. Times stay. Turn it off to get the real names back.
-        The in-app screens never hide titles.
+        On the lock wallpaper only, <strong>Hide titles</strong> replaces names with
+        <strong>Busy</strong>, <strong>Task</strong>, or <strong>Reminder</strong>. Times stay.
+        Turn it off to show real titles again. Screens inside the app never hide titles.
       </p>
     </details>
 
     <details>
       <summary>I got a new phone. How do I get Pro back?</summary>
       <p>
-        Install lock inn from Play on that phone, signed into the <strong>same Play account
-        that paid</strong>. Settings → <strong>Restore purchases</strong> →
-        <strong>Restore</strong>. You should see <strong>Pro restored.</strong> Calendar
-        Sign-In is unrelated; sign into Calendar separately if you want events.
+        Install lock inn from Play, signed into the <strong>same Google Play account that
+        paid</strong>. Then Settings → <strong>Restore purchases</strong> →
+        <strong>Restore</strong>. You should see <strong>Pro restored.</strong>
       </p>
       <p>
-        <strong>No purchase on this Play account.</strong> means this Play user never bought
-        <code>lockinn_pro</code> (or you are on a different Play account than the one that paid).
+        Calendar Sign-In is separate — sign into Calendar again if you want events.
+        <strong>No purchase on this Play account.</strong> means this Play user did not buy
+        Pro, or you are on a different Play account than the one that paid.
       </p>
     </details>
 
     <details>
       <summary>What happens when I Sign out?</summary>
       <p>
-        <strong>Sign out</strong> ends the Google session in lock inn and removes synced
-        Google calendar events from the local database. Toast:
+        <strong>Sign out</strong> ends Google Calendar in lock inn and removes synced Google
+        events from this phone. You will see
         <strong>Signed out. Synced calendar events were removed from this phone.</strong>
       </p>
-      <p>Staying: tasks, lists, reminders, hand-created events, lock-screen settings, Pro.</p>
-      <p>Google Calendar itself is untouched. We do not write to it, so we do not delete it there.</p>
+      <p>
+        Tasks, lists, reminders, events you created in lock inn, lock-screen settings, and
+        Pro all stay. Google Calendar on Google’s side is untouched — we never write to it,
+        so we never delete it there.
+      </p>
     </details>
 
     <details>
-      <summary>How do I uninstall / delete my data?</summary>
-      <p>lock inn has no cloud account of its own.</p>
+      <summary>How do I uninstall or delete my data?</summary>
+      <p>lock inn does not keep a cloud account of its own. Everything on the desk lives on the phone.</p>
       <ol>
         <li><strong>Sign out</strong> if you signed in.</li>
-        <li>Android Settings → Apps → lock inn → Storage → clear data, or uninstall. That wipes the on-device desk, tokens, and any copied lock photo.</li>
+        <li>Android Settings → Apps → lock inn → Storage → clear data, or uninstall. That removes the on-device desk, sign-in tokens, and any copied lock photo.</li>
       </ol>
       <p>
         Play keeps the Pro purchase on the Play account. Uninstalling does not refund it;
-        <strong>Restore</strong> brings it back. Google Calendar keeps Google’s copy of your events.
+        <strong>Restore</strong> brings it back on a new install. Google Calendar keeps
+        Google’s copy of your events.
       </p>
-      <p>Step-by-step: <a href="account-deletion.html">Delete account and data</a>.</p>
+      <p>Full steps: <a href="account-deletion.html">Delete account and data</a>.</p>
     </details>
 
     <details>
       <summary>Does it work offline?</summary>
       <p>
-        The desk, local events, reminders already scheduled, and a lock image already applied:
-        yes. <strong>Sync now</strong>, Sign-In, <strong>Get pro</strong>, and
-        <strong>Restore</strong> need a network.
+        Yes for the desk: local tasks, local events, reminders already scheduled, and a lock
+        image already applied. <strong>Sign in with Google</strong>, <strong>Sync now</strong>,
+        <strong>Get pro</strong>, and <strong>Restore</strong> need a network. A new Google
+        event will not reach the lock image until you sync again.
       </p>
     </details>
 
     <details>
       <summary>Can I pick light or dark in the app?</summary>
-      <p>No. <strong>Theme</strong> is <strong>System</strong>. Change the phone’s display theme.</p>
+      <p>
+        Not from lock inn. <strong>Theme</strong> follows the phone and shows
+        <strong>System</strong>. Change light or dark in Android display settings.
+      </p>
     </details>
 
     <details>
       <summary>Is there a home-screen widget?</summary>
-      <p>No. Lock wallpaper only. Home stays.</p>
+      <p>
+        No. The day lives on the lock wallpaper. The home screen is left alone on purpose.
+      </p>
     </details>
 
     <details>
-      <summary>The app feels unfinished in places</summary>
-      <p>It is closed beta. Known roughness you will hit:</p>
+      <summary>What should I expect in this beta?</summary>
+      <p>
+        This is an early build. The desk and lock wallpaper are the product. A few things are
+        still simple on purpose:
+      </p>
       <ul>
-        <li>Full task editor is not wired to a button. Quick-add and complete are the task flow.</li>
-        <li>No write-back to Google. No snooze. No due time on tasks. No home widget. No in-app theme picker.</li>
-        <li>Google pull is a 15-day window, not your whole calendar.</li>
-        <li>Some OEMs fight lock wallpaper. <strong>Update now</strong> is the recovery, not a cure.</li>
-        <li>OAuth still says LockDesk on Google’s sheet.</li>
+        <li>Tasks are quick-add and complete. There is no full edit sheet on screen yet, and due dates are dates, not times.</li>
+        <li>Events you add here stay on the phone. Google Calendar is read-only, about one day back and two weeks ahead.</li>
+        <li>Reminders do not snooze.</li>
+        <li>There is no home-screen widget and no in-app theme picker.</li>
+        <li>On some phones another app can steal the lock wallpaper. <strong>Update now</strong> puts lock inn back.</li>
+        <li>Google Sign-In may still show the name LockDesk. That is us.</li>
       </ul>
-      <p>Report the surprising ones. Skip the ones already on this list unless they fail in a new way.</p>
+      <p>
+        If something fails in a way this page does not describe, tell us. That is the useful
+        kind of report.
+      </p>
     </details>
 
     <details>
       <summary>How do I send feedback?</summary>
       <p>Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a>.</p>
       <p>
-        Include: phone model, Android version, whether you installed from Play, the Gmail used
-        for Calendar (if any), and what you expected versus what happened. A lock-screen photo
-        helps for wallpaper bugs. Do not send recovery screenshots that show your PIN, pattern,
-        or password.
+        Include the phone model, Android version, and what you expected versus what happened.
+        A photo of the lock screen helps for wallpaper bugs. Do not send a screenshot that
+        shows your PIN, pattern, or password.
       </p>
     </details>
 
     <h2 id="stuck">Still stuck</h2>
     <p>
-      Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a>. Say you are on closed
-      testing and which build you have (<strong>Version 1.7.1</strong> in settings).
+      Email <a href="mailto:h17devs@gmail.com">h17devs@gmail.com</a>. Mention the version
+      in Settings (<strong>Version 1.7.1</strong>) and the phone you are on.
     </p>
     <p>Legal pages next to this one:</p>
     <ul>
